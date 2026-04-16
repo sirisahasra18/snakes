@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-neon-green: #39ff14;
+  --color-neon-pink: #ff00ff;
+  --color-neon-cyan: #00ffff;
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+  --font-digital: 'VT323', monospace;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-10deg); }
+  21% { transform: skew(0deg); }
+  40% { transform: skew(0deg); }
+  41% { transform: skew(10deg); }
+  42% { transform: skew(0deg); }
+  60% { transform: skew(0deg); }
+  61% { transform: skew(-5deg); }
+  62% { transform: skew(0deg); }
+  80% { transform: skew(0deg); }
+  81% { transform: skew(15deg); }
+  82% { transform: skew(0deg); }
+  100% { transform: skew(0deg); }
+}
+
+@keyframes glitch-color {
+  0% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  20% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  21% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+  40% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+  41% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  60% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  61% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+  80% { text-shadow: -2px 0 #ff00ff, 2px 0 #00ffff; }
+  81% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+  100% { text-shadow: 2px 0 #ff00ff, -2px 0 #00ffff; }
+}
+
+.glitch-text {
+  animation: glitch-skew 3s infinite linear alternate-reverse, glitch-color 0.5s infinite linear alternate-reverse;
+  display: inline-block;
+}
